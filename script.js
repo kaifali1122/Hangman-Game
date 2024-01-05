@@ -32,7 +32,7 @@ const gameOver=(isVictory)=>{
         const modalText= isVictory?`You found the word`: `The correct word was:`;
         gameModal.querySelector("img").src = `${isVictory ? `victory`:`lost`}.gif`;
         gameModal.querySelector("h4").innerText = `${isVictory ? `Congrats`:`Game Over`}`;
-        gameModal.querySelector("img").innerHTML = `${modalText} <b>${currentWord}</b>`;
+        gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModal.classList.add("show");
     },300);
 }
@@ -66,4 +66,6 @@ for (let i = 97; i <= 122; i++) {
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
 }
 getRandomWord()
+palayAgainBtn.addEventListener("click",getRandomWord);
+
 palayAgainBtn.addEventListenerO("click",getRandomWord);
